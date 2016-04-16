@@ -1,3 +1,9 @@
+'''
+Given: A protein string PP of length at most 1000 aa.
+
+Return: The total weight of PP. Consult the monoisotopic mass table.
+'''
+
 def weight(protein):
 	# Build mass table from mass_table.txt
 	mass = {}
