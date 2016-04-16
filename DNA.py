@@ -20,3 +20,4 @@ def count_DNA(s):
 	return Nu["A"], Nu["C"], Nu["G"], Nu["T"]
 
 	
+
