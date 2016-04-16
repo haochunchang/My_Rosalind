@@ -1,3 +1,9 @@
+'''
+Given: An RNA string ss corresponding to a strand of mRNA (of length at most 10 kbp).
+
+Return: The protein string encoded by ss.
+'''
+
 def Translate(codons):
 	codons = [codons[i:i + 3] for i in range(0, len(codons), 3)]     #separate each codon
 	table = {}
