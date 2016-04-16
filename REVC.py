@@ -1,3 +1,9 @@
+'''
+Given: A DNA string ss of length at most 1000 bp.
+
+Return: The reverse complement scsc of ss.
+'''
+
 def validate_base(base, RNAflag = False):
 	RNAbase = set("AUCG")
 	DNAbase = set("ATCG")
