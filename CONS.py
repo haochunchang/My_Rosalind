@@ -1,14 +1,11 @@
-#Turn FASTA file format into a list of DNA sequences
-def process(file):
-	case = -1
-	DNA = []
-	for line in file:
-		if line[0] == ">":
-			case += 1
-		else:
-			DNA.append("")
-			DNA[case] += line.rstrip()
-	return DNA
+'''
+Given: A collection of at most 10 DNA strings of equal length (at most 1 kbp) in FASTA format.
+
+Return: A consensus string and profile matrix for the collection. 
+(If several possible consensus strings exist, then you may return any one of them.)
+'''
+
+from DataProcess import ReadFASTA
 
 #Build profile from DNA seqence list
 def profile(DNA):
@@ -63,12 +60,13 @@ def consensus(profile):
 		con += max_k
 
 	return con
-
-with open(input("file input: ")) as f:
-	data = process(f)
-	pro = profile(data)
-	con = consensus(pro)
-with open("cons_output.txt", "w") as o:
-	o.write(con)
-	o.write(" ")
-	o.write(str(matrix(pro)))
+	
+if __name__ == "__main__":
+	with open(input("file input: ")) as f:
+		data = ReadFASTA(f)
+		pro = profile(data)
+		con = consensus(pro)
+	with open("cons_output.txt", "w") as o:
+		o.write(con)
+		o.write(" ")
+		o.write(str(matrix(pro)))
