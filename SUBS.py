@@ -1,3 +1,8 @@
+'''
+Given: Two DNA strings ss and tt (each of length at most 1 kbp).
+Return: All locations of tt as a substring of ss.
+'''
+
 def get_index(s, char):
 	return [i[0] for i in enumerate(s) if i[1] == char]     #return a list of index of char in s
 
