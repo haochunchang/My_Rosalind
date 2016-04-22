@@ -14,3 +14,11 @@ def ReadFASTA(file):
 			seq[case] += line.rstrip()
 	seq = [i for i in seq if i != ""]
 	return seq
+
+# 2. check if the bases belongs to DNA nucleotides.
+def validate_DNAbase(base):
+	dna = set("A", "T", "C", "G")
+	if set(base) - set(dna) != None:
+		return False
+	else:
+		return True
