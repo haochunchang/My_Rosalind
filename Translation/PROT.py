@@ -26,6 +26,7 @@ def Build_Table():
 				table[line[0:3]] = line[3:]	
 			else:
 				table[line[1:4]] = line[4:]
+	del table[""]
 	return table
 
 if __name__ == '__main__':
