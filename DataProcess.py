@@ -6,6 +6,7 @@ Table of contents:
 2. validate_base
 3. compliment_DNAbase
 4. reverse_base
+5. ReadFASTA_dic
 '''
 # 1.process FASTA into a list of seq.
 def ReadFASTA(file):
@@ -54,7 +55,20 @@ def reverse_base(base):
 		new_base += i
 	return new_base
 
-
-
+# 5. convert FASTA file into dictionary with seq as value
+def ReadFASTA_dic(file):
+	dic = {}
+	fasta_key = ""
+	fasta_seq = ""
+	for line in file:
+		if line[0] == ">":
+			if fasta_key != None and fasta_seq != None:
+				dic[fasta_key] = fasta_seq
+			fasta_key = line[1:].replace("\n", "")
+			fasta_seq = ""
+		else:
+			fasta_seq += line.replace("\n", "")
+	del dic[""]
+	return dic
 
 
