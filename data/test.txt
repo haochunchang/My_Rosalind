@@ -1,0 +1,4 @@
+>Rosalind_23
+GAC
+>Rosalind_64
+AGCAT
