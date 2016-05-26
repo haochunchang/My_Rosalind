@@ -1,4 +1,12 @@
->Rosalind_23
-GAC
->Rosalind_64
-AGCAT
+>Rosalind_56
+ATTAG
+ACCTG
+>Rosalind_57
+CCT
+GCCGGAA
+>Rosalind_58
+AG
+ACCTGCCG
+>Rosalind_59
+GCCGGA
+ATAC
