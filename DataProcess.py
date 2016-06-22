@@ -4,7 +4,7 @@
 Table of contents:
 1. ReadFASTA
 2. validate_base
-3. compliment_DNAbase
+3. complement_DNAbase
 4. reverse_base
 5. ReadFASTA_dic
 '''
@@ -33,8 +33,8 @@ def validate_base(base, rnaflag = False):
 	else:
 		return True
 
-# 3. compliment the DNA nucleotide base
-def compliment_DNAbase(base):
+# 3. complement the DNA nucleotide base
+def complement_DNAbase(base):
 	new_base = ""
 	if validate_base(base.upper()):
 		for b in base:
