@@ -57,18 +57,23 @@ def reverse_base(base):
 
 # 5. convert FASTA file into dictionary with seq as value
 def ReadFASTA_dic(file):
-	dic = {}
-	fasta_key = ""
-	fasta_seq = ""
-	for line in file:
-		if line[0] == ">":
-			if fasta_key != None and fasta_seq != None:
-				dic[fasta_key] = fasta_seq
-			fasta_key = line[1:].replace("\n", "")
-			fasta_seq = ""
-		else:
-			fasta_seq += line.replace("\n", "")
-	del dic[""]
-	return dic
+    dic = {}
+    fasta_key = ""
+    fasta_seq = ""
+    for line in file:
+        if line[0] == ">":
+            if fasta_key != None and fasta_seq != None:
+                dic[fasta_key] = fasta_seq
+            fasta_key = line[1:].replace("\n", "")
+            fasta_seq = ""
+        else:
+            fasta_seq += line.replace("\n", "")
+    dic.update({fasta_key:fasta_seq})
+    del dic[""]
+    return dic 
+
+if __name__ == "__main__":
+    with open("data/test_corr.txt", "r") as f:
+        print(ReadFASTA_dic(f))
 
 
