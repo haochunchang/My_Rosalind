@@ -11,6 +11,7 @@ def exp_num(n, s, A):
 	for gc in A:
 		# compute gc content of s
 		count = [s.count("C") + s.count("G"), s.count("A") + s.count("T")]
+		# the number of slots which substring s can fit into t
 		substring_slot = n - len(s) + 1
 		prob = ((0.5 * gc) ** count[0]) * (0.5 * (1 - gc)) ** count[1]
 		exp.append(str(prob * substring_slot)) 
